@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">contact_SauravBajracharya_c0794691_android</string>
+    <string name="add_contact_button">Add Employee Button</string>
+    <string name="name_row">Name</string>
+    <string name="first_name_row">First Name</string>
+    <string name="last_name_row">Last Name</string>
+    <string name="person_image">Person image</string>
+    <string name="email_row_name">Email</string>
+    <string name="number_row_name">Phone Number</string>
+    <string name="address_row_name">Address</string>
+    <string name="add_new_contact_label">Add New Contact</string>
+    <string name="contact_name_placeholder">Enter Contact name</string>
+    <string name="contact_first_name_placeholder">Enter Contact First Name</string>
+    <string name="contact_last_name_placeholder">Enter Contact Last Name</string>
+    <string name="contact_email_placeholder">Enter Contact Email</string>
+    <string name="contact_number_placeholder">Enter Contact Number</string>
+    <string name="contact_address_placeholder">Enter Contact Address</string>
+    <string name="add_contact_button_text">Add contact</string>
+    <string name="update_label">Update the contact</string>
+    <string name="update_contact_btn_text">Update contact</string>
 </resources>
