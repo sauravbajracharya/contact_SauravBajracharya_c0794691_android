@@ -32,21 +32,21 @@ public class ContactRepository {
     }
 
 
-    public void insert(Contact employee){
+    public void insert(Contact contact){
         ContactRoomDatabase.databaseWriteExecutor.execute(() -> {
-            contactDao.insert(employee);
+            contactDao.insert(contact);
         });
     }
 
-    public void update(Contact employee){
+    public void update(Contact contact){
         ContactRoomDatabase.databaseWriteExecutor.execute(() -> {
-            contactDao.update(employee);
+            contactDao.update(contact);
         });
     }
 
-    public void delete(Contact employee){
+    public void delete(Contact contact){
         ContactRoomDatabase.databaseWriteExecutor.execute(() -> {
-            contactDao.delete(employee);
+            contactDao.delete(contact);
         });
     }
 

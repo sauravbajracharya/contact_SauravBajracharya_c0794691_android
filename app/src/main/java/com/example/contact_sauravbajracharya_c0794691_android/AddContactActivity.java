@@ -27,7 +27,6 @@ public class AddContactActivity extends AppCompatActivity {
 
     private Contact contactTobeUpdated;
 
-
     private EditText etFirstName, etLastName, etEmail, etNumber, etAddress;
 
 
@@ -70,12 +69,12 @@ public class AddContactActivity extends AppCompatActivity {
 
             contactViewModel.getContact(contactId).observe(this, contact -> {
                 if (contact != null) {
-                    etFirstName.setText(contact.getFirstName());
-                    etLastName.setText(contact.getLastName());
-                    etEmail.setText(contact.getEmail());
-                    etNumber.setText(String.valueOf(contact.getPhoneNumber()));
-                    etAddress.setText(contact.getAddress());
-                    contactTobeUpdated = contact;
+//                    etFirstName.setText(contact.getFirstName());
+//                    etLastName.setText(contact.getLastName());
+//                    etEmail.setText(contact.getEmail());
+//                    etNumber.setText(contact.getPhoneNumber());
+//                    etAddress.setText(contact.getAddress());
+//                   contactTobeUpdated = contact;
                 }
             });
             TextView label = findViewById(R.id.label);
@@ -132,7 +131,7 @@ public class AddContactActivity extends AppCompatActivity {
             contact.setFirstName(first_name);
             contact.setLastName(last_name);
             contact.setEmail(email);
-            contact.setPhoneNumber(Integer.parseInt(number));
+            contact.setPhoneNumber(number);
             contact.setAddress(address);
             contactViewModel.update(contact);
         } else {
