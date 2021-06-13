@@ -63,4 +63,8 @@ dependencies {
 
     // swipe row
     implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
+
+    // gson converter
+    implementation 'com.google.code.gson:gson:2.8.6'
+
 }

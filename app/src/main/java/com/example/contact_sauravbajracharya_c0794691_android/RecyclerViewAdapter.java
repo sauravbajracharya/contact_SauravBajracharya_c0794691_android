@@ -81,13 +81,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         @Override
         public void onClick(View v) {
-            onContactClickListener.onContactClick(getAdapterPosition());
+            onContactClickListener.onContactClick(contactList.get(getAdapterPosition()).getId());
         }
     }
 
 
     public interface OnContactClickListener {
-        void onContactClick(int position);
+        void onContactClick(int contactId);
     }
 
 

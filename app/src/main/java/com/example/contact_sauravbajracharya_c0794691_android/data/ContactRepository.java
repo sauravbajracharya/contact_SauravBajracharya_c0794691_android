@@ -28,7 +28,7 @@ public class ContactRepository {
 
     public LiveData<Contact> getContact(int id){
 
-        return  contactDao.getContact();
+        return  contactDao.getContact(id);
     }
 
 

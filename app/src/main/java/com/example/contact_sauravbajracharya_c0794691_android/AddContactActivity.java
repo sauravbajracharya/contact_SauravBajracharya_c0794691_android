@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.contact_sauravbajracharya_c0794691_android.model.Contact;
 import com.example.contact_sauravbajracharya_c0794691_android.model.ContactViewModel;
+import com.google.gson.GsonBuilder;
 
 import java.util.Arrays;
 
@@ -65,16 +66,19 @@ public class AddContactActivity extends AppCompatActivity {
 
         if (getIntent().hasExtra(MainActivity.CONTACT_ID)) {
             contactId = getIntent().getIntExtra(MainActivity.CONTACT_ID, 0);
-            Log.d("TAG", "onCreate: " + contactId);
+            Log.e("TAG", "onCreate: " + contactId);
 
             contactViewModel.getContact(contactId).observe(this, contact -> {
                 if (contact != null) {
-//                    etFirstName.setText(contact.getFirstName());
-//                    etLastName.setText(contact.getLastName());
-//                    etEmail.setText(contact.getEmail());
-//                    etNumber.setText(contact.getPhoneNumber());
-//                    etAddress.setText(contact.getAddress());
-//                   contactTobeUpdated = contact;
+
+                    Log.e("TAG", "onCreate: " + new GsonBuilder().create().toJson(contact));
+
+                    etFirstName.setText(contact.getFirstName());
+                    etLastName.setText(contact.getLastName());
+                    etEmail.setText(contact.getEmail());
+                    etNumber.setText(contact.getPhoneNumber());
+                    etAddress.setText(contact.getAddress());
+                   contactTobeUpdated = contact;
                 }
             });
             TextView label = findViewById(R.id.label);

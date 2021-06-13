@@ -1,16 +1,21 @@
 package com.example.contact_sauravbajracharya_c0794691_android.model;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.contact_sauravbajracharya_c0794691_android.data.ContactRepository;
+import com.google.gson.GsonBuilder;
 
 import java.util.List;
 
 public class ContactViewModel extends AndroidViewModel {
+
+
+    private final String TAG = ContactViewModel.this.getClass().getSimpleName();
 
     private ContactRepository contactRepository;
     private final LiveData<List<Contact>> allContacts;

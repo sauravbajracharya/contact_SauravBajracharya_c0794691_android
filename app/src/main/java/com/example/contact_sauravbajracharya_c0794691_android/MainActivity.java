@@ -5,6 +5,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -137,10 +138,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             });
 
     @Override
-    public void onContactClick(int position) {
-        Contact contact = contactViewModel.getAllContacts().getValue().get(position);
+    public void onContactClick(int contactId) {
         Intent intent = new Intent(MainActivity.this, AddContactActivity.class);
-        intent.putExtra(CONTACT_ID, contact.getId());
+        intent.putExtra(CONTACT_ID, contactId);
         startActivity(intent);
     }
 }

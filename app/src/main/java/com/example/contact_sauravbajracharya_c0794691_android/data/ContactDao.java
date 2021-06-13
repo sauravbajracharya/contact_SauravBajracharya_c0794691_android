@@ -24,8 +24,12 @@ public interface ContactDao {
     @Query("SELECT * FROM contact ORDER BY first_name ASC")
     LiveData<List<Contact>> getAllContacts();
 
-    @Query("SELECT * FROM contact WHERE id == id")
-    LiveData<Contact> getContact();
+    @Query("SELECT * FROM contact WHERE id == :id")
+    LiveData<Contact> getContact(int id);
+
+    @Query("SELECT * FROM contact WHERE first_name == :queryData")
+    LiveData<List<Contact>> getSearchContact(String queryData);
+
 
     @Update
     void update(Contact contact);

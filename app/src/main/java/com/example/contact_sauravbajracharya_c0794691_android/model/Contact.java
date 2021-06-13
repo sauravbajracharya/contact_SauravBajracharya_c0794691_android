@@ -9,6 +9,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "contact")
 public class Contact {
 
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int id;
