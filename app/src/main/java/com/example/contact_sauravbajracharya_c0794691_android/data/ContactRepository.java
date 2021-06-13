@@ -26,6 +26,11 @@ public class ContactRepository {
         return allContacts;
     }
 
+    public LiveData<Contact> getContact(int id){
+
+        return  contactDao.getContact();
+    }
+
 
     public void insert(Contact employee){
         ContactRoomDatabase.databaseWriteExecutor.execute(() -> {
@@ -44,8 +49,5 @@ public class ContactRepository {
             contactDao.delete(employee);
         });
     }
-
-
-
 
 }
