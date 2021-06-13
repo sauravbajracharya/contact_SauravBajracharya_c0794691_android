@@ -22,10 +22,10 @@ public interface ContactDao {
     void deleteAll();
 
     @Query("SELECT * FROM contact ORDER BY first_name ASC")
-    LiveData<List<Contact>> getAllEmployees();
+    LiveData<List<Contact>> getAllContacts();
 
     @Query("SELECT * FROM contact WHERE id == id")
-    LiveData<Contact> getEmployee();
+    LiveData<Contact> getContact();
 
     @Update
     void update(Contact contact);
