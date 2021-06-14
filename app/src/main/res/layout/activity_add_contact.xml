@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddContactActivity"
+    tools:context=".ui.add.AddContactActivity"
     android:background="#D9D1F4">
 
     <LinearLayout
@@ -21,7 +21,7 @@
             android:id="@+id/label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_addcontact_btn"
+            android:background="@drawable/background_addcontact"
             android:gravity="center_horizontal"
             android:text="@string/add_new_contact_label"
             android:textAlignment="center"

@@ -27,10 +27,13 @@ public class ContactRepository {
     }
 
     public LiveData<Contact> getContact(int id){
-
         return  contactDao.getContact(id);
     }
 
+
+    public LiveData<List<Contact>> getSearchContact(String queryData){
+        return   contactDao.getSearchContact(queryData);
+    }
 
     public void insert(Contact contact){
         ContactRoomDatabase.databaseWriteExecutor.execute(() -> {
@@ -49,5 +52,7 @@ public class ContactRepository {
             contactDao.delete(contact);
         });
     }
+
+
 
 }

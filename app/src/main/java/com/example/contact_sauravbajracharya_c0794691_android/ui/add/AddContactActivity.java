@@ -1,4 +1,4 @@
-package com.example.contact_sauravbajracharya_c0794691_android;
+package com.example.contact_sauravbajracharya_c0794691_android.ui.add;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,11 +12,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.contact_sauravbajracharya_c0794691_android.R;
 import com.example.contact_sauravbajracharya_c0794691_android.model.Contact;
 import com.example.contact_sauravbajracharya_c0794691_android.model.ContactViewModel;
+import com.example.contact_sauravbajracharya_c0794691_android.ui.main.MainActivity;
 import com.google.gson.GsonBuilder;
-
-import java.util.Arrays;
 
 public class AddContactActivity extends AppCompatActivity {
 
