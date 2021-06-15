@@ -36,6 +36,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
+
 public class MainActivity extends AppCompatActivity implements RecyclerViewAdapter.OnContactClickListener {
 
     private static final int SEND_SMS_PERMISSION_REQUEST_CODE = 111;
@@ -82,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
         });
 
+
+
     }
 
 
@@ -97,13 +101,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
     private void initListeners() {
 
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-
-            }
-        });
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(v -> {
@@ -114,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
     }
 
+    //search part
     private void doEditTextObserveWork() {
 
         searchText.addTextChangedListener(new TextWatcher() {
@@ -124,10 +123,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
                 recyclerViewAdapter.getFilter().filter(s.toString());
-
 
             }
 
@@ -145,13 +141,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         contactSize = findViewById(R.id.total_count);
         searchText = findViewById(R.id.searchText);
-        searchButton = findViewById(R.id.button);
+//        searchButton = findViewById(R.id.button);
 
     }
 
     private void prepareRecyclerView() {
-
-
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
@@ -196,7 +190,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             @Override
             public void onChildDraw(@NonNull  Canvas c, @NonNull  RecyclerView recyclerView, @NonNull  RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
 
-                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
 
 //                new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
 //                        .setIconHorizontalMargin(1,1)
@@ -204,6 +197,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 //                        .addSwipeRightActionIcon(R.drawable.ic_update)
 //                        .create()
 //                        .decorate();
+                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+
             }
         };
 
